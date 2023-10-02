@@ -102,10 +102,7 @@ const InlineForm = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder='imranhrafi@gmail.com'
-                    {...field}
-                  />
+                  <Input placeholder='example@gmail.com' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -159,7 +156,7 @@ const InlineForm = () => {
               </FormItem>
             )}
           />
-          <Button className='w-full ' type='submit'>
+          <Button className='w-full' type='submit'>
             Submit
           </Button>
         </form>

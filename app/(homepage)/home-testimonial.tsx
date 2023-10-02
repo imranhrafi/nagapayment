@@ -38,10 +38,10 @@ const HomeTestimonial = () => {
       </div>
       <div className='flex flex-col gap-10 lg:col-span-1 lg:flex-col md:flex-row'>
         {testimonialData.map((testimonial) => (
-          <Card className='p-10 max-w-[80%]' key={testimonial.id}>
-            <p className='w-4/5 text-base'>
+          <Card className='p-10 lg:max-w-[80%]' key={testimonial.id}>
+            <blockquote className='text-base lg:w-4/5'>
               {testimonial.appreciation}
-            </p>
+            </blockquote>
             <div className='flex items-center justify-between mt-12'>
               <div className='flex flex-col'>
                 <h3 className='text-base'>{testimonial.name}</h3>

@@ -82,7 +82,7 @@ const Footer = () => {
       <h3 className='mb-12 cursor-pointer select-none basis-1/5'>
         <span className='text-primary '>Naga</span>Payments
       </h3>
-      <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6'>
+      <div className='grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6'>
         {footerData.map((data) => (
           <div key={data.id} className='col-span-1'>
             <h3 className='mb-6 text-base font-normal uppercase text-muted-foreground'>
@@ -102,13 +102,10 @@ const Footer = () => {
 
           <form
             action=''
-            className='flex items-center justify-center'
+            className='flex items-center justify-center g-4'
           >
-            <Input
-              placeholder='Enter your email'
-              className='w-full'
-            />
-            <Button className=''>Subscribe</Button>
+            <Input placeholder='Enter your email' className='' />
+            <Button className='rounded-md h-14'>Subscribe</Button>
           </form>
         </div>
       </div>

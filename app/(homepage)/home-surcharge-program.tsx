@@ -31,7 +31,7 @@ const SurchargeProgram = () => {
       <header className='flex flex-col items-center justify-center gap-6 text-center mb-14'>
         <p className='uppercase text-primary'>exclusive</p>
         <h1>The Surcharge program</h1>
-        <p className='w-1/2'>
+        <p className='lg"w-1/2'>
           Our surcharge program makes every purchase a win-win for you
           and your customers.
         </p>

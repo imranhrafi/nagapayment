@@ -1,4 +1,9 @@
 "use client";
+
+import * as React from "react";
+import Link from "next/link";
+
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,7 +14,13 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-export const navItems = [
+interface NavItem {
+  name: string;
+  href: string;
+  subMenu?: NavItem[];
+}
+
+const navItems: NavItem[] = [
   {
     name: "Products",
     href: "/products",
@@ -38,33 +49,58 @@ export const navItems = [
   },
 ];
 
-export function NavItems() {
+function ListItem({
+  className,
+  title,
+  children,
+  ...props
+}: React.HTMLProps<HTMLAnchorElement>) {
   return (
-    <NavigationMenu className='basis-1/2 hidden lg:block'>
-      <NavigationMenuList className=''>
-        {navItems.map((item, index) => (
-          <NavigationMenuItem key={index}>
-            <NavigationMenuTrigger
-              className={navigationMenuTriggerStyle()}
-            >
-              {item.name}
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className='text-sm font-medium leading-none'>
+            {title}
+          </div>
+          <p className='text-sm leading-snug line-clamp-2 text-muted-foreground'>
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+}
+
+ListItem.displayName = "ListItem";
+
+export function NavList({ className }: { className?: string }) {
+  return (
+    <NavigationMenu>
+      <NavigationMenuList className={cn("hidden lg:flex", className)}>
+        {navItems.map((navItem) => (
+          <NavigationMenuItem key={navItem.href}>
+            <NavigationMenuTrigger>
+              {navItem.name}
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <NavigationMenuLink href={item.href}>
-                {item.name}
-              </NavigationMenuLink>
-              {item.subMenu && (
-                <NavigationMenuList>
-                  {item.subMenu.map((subItem, subIndex) => (
-                    <NavigationMenuItem key={subIndex}>
-                      <NavigationMenuLink href={subItem.href}>
-                        {subItem.name}
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
+            {navItem.subMenu ? (
+              <NavigationMenuContent>
+                <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
+                  {navItem.subMenu.map((subNavItem) => (
+                    <ListItem
+                      key={subNavItem.href}
+                      title={subNavItem.name}
+                      href={subNavItem.href}
+                    />
                   ))}
-                </NavigationMenuList>
-              )}
-            </NavigationMenuContent>
+                </ul>
+              </NavigationMenuContent>
+            ) : null}
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>

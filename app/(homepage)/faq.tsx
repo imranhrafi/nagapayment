@@ -47,7 +47,7 @@ import { Button } from "../../components/ui/button";
 
 const Faq = () => {
   return (
-    <section className='flex flex-col items-center justify-center gap-16'>
+    <section className='flex flex-col items-center justify-center gap-16 '>
       <h1 className=''> Frequently Asked Questions</h1>
       <Accordion type='single' collapsible className='lg:w-[60%]'>
         {faqData.map((faq) => (
@@ -56,14 +56,14 @@ const Faq = () => {
             key={faq.id}
             className='mb-8'
           >
-            <AccordionTrigger className='text-xl'>
+            <AccordionTrigger className='text-xl text-left'>
               {faq.question}
             </AccordionTrigger>
             <AccordionContent>{faq.answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
-      <div className='flex items-center justify-between lg:w-[60%] '>
+      <div className='flex justify-between w-full lg:w-[60%] '>
         <div className='flex flex-col'>
           <p className='text-sm'>Didn’t find your answer?</p>
           <h3 className='text-base'>Ask us directly</h3>

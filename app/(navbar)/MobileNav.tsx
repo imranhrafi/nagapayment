@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { NavItems } from "./nav-items";
+import { NavList } from "./nav-items";
 
 function MobileNav() {
   return (
@@ -18,7 +18,7 @@ function MobileNav() {
         <AlignJustify />
       </SheetTrigger>
       <SheetContent>
-        <NavItems />
+        <NavList className='flex flex-col lg:hidden' />
       </SheetContent>
     </Sheet>
   );

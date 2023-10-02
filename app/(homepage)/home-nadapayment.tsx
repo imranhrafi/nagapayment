@@ -29,12 +29,9 @@ const NadaPayment = () => {
   return (
     <section className='flex flex-col gap-16'>
       <h1 className='w-3/5'>Nadapayment can do more</h1>
-      <div className='flex flex-wrap lg:justify-between '>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {paymentData.map((payment) => (
-          <div
-            key={payment.id}
-            className='flex flex-col gap-6 basis-[97%] md:basis-[48%] lg:basis-[30%]  m-4'
-          >
+          <div key={payment.id} className='flex flex-col gap-6 m-4'>
             <Image
               src={payment.image}
               alt={payment.name}

@@ -1,20 +1,20 @@
 import MobileNav from "./MobileNav";
 import NavButtons from "./nav-buttons";
-import { NavItems } from "./nav-items";
+import { NavList } from "./nav-items";
 
 const Navbar = () => {
   return (
-    <nav className=' relative flex justify-between lg:justify-around items-center mx-10 my-6'>
-      <h3 className='basis-1/5 select-none cursor-pointer'>
+    <nav className='relative flex items-center justify-between mx-10 my-6 lg:justify-around'>
+      <h3 className='cursor-pointer select-none basis-1/5'>
         <span className='text-primary '>Naga</span>Payments
       </h3>
 
-      <NavItems />
+      <NavList />
 
-      <div className='basis-1/2 lg:basis-1/5 md:block hidden'>
+      <div className='hidden basis-1/2 lg:basis-1/5 md:block'>
         <NavButtons />
       </div>
-      <div className='lg:hidden basis-1/12 inline'>
+      <div className='inline lg:hidden basis-1/12'>
         <MobileNav />
       </div>
     </nav>
