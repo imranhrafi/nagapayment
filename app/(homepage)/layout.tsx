@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={spaceGrotesk.className}>
-        <ThemeProvider attribute='class' defaultTheme='system'>
+        <ThemeProvider attribute='class' defaultTheme='light'>
           <Navbar />
           {children}
           <Toaster />
