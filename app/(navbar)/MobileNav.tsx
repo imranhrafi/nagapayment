@@ -14,11 +14,11 @@ import { NavList } from "./nav-items";
 function MobileNav() {
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger asChild>
         <AlignJustify />
       </SheetTrigger>
-      <SheetContent>
-        <NavList className='flex flex-col lg:hidden' />
+      <SheetContent side={"right"}>
+        <NavList className='flex flex-col p-0 m-0 lg:hidden' />
       </SheetContent>
     </Sheet>
   );

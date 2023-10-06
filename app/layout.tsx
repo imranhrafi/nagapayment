@@ -1,9 +1,12 @@
-import "../globals.css";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "../(navbar)/Navbar";
-import { Toaster } from "../../components/ui/toaster";
+import Navbar from "./(navbar)/Navbar";
+import { Toaster } from "../components/ui/toaster";
+import { cn } from "../lib/utils";
+import Footer from "./(homepage)/footer";
+import ThemeToggle from "../components/theme-toggle";
 
 const inter = Inter({ subsets: ["latin"] });
 const spaceGrotesk = Space_Grotesk({
@@ -22,11 +25,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={spaceGrotesk.className}>
+      <body className={cn("", spaceGrotesk.className)}>
         <ThemeProvider attribute='class' defaultTheme='light'>
           <Navbar />
-          {children}
+          <main className='max-w-[1440px] mx-auto'>{children}</main>
           <Toaster />
+          <Footer />
+          <ThemeToggle />
         </ThemeProvider>
       </body>
     </html>

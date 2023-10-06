@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
+  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -24,22 +25,56 @@ const navItems: NavItem[] = [
   {
     name: "Products",
     href: "/products",
-  },
-  {
-    name: "Payments",
-    href: "/payments",
     subMenu: [
       {
-        name: "Accept Payments",
-        href: "/payments/accept",
+        name: "Terminal",
+        href: "/terminal",
       },
       {
-        name: "Pricing",
-        href: "/payments/pricing",
+        name: "Virtual terminal",
+        href: "/vitual-terminal",
       },
       {
-        name: "Rules for Surcharging",
-        href: "/payments/rules",
+        name: "Payment page",
+        href: "/payment",
+      },
+      {
+        name: "Invoicing",
+        href: "/invoice",
+      },
+      {
+        name: "Payment Links",
+        href: "/payment-links",
+      },
+      {
+        name: "Recurring Payment ",
+        href: "/recurring-payment",
+      },
+    ],
+  },
+  {
+    name: "Accept Payments",
+    href: "/accept-payments",
+  },
+  {
+    name: "Rules for Surcharging",
+    href: "/surcharging",
+  },
+  {
+    name: "pricing",
+    href: "/pricing",
+  },
+  {
+    name: "Integrations",
+    href: "/integrations",
+    subMenu: [
+      {
+        name: "Dental",
+        href: "/integrations/dental",
+      },
+      {
+        name: "QuickBooks",
+        href: "/integrations/quickbooks",
       },
     ],
   },
@@ -85,9 +120,18 @@ export function NavList({ className }: { className?: string }) {
       <NavigationMenuList className={cn("hidden lg:flex", className)}>
         {navItems.map((navItem) => (
           <NavigationMenuItem key={navItem.href}>
-            <NavigationMenuTrigger>
-              {navItem.name}
-            </NavigationMenuTrigger>
+            {navItem.subMenu ? (
+              <NavigationMenuTrigger submenu={true}>
+                {navItem.name}
+              </NavigationMenuTrigger>
+            ) : (
+              <NavigationMenuTrigger>
+                <NavigationMenuLink href={navItem.href}>
+                  {navItem.name}
+                </NavigationMenuLink>
+              </NavigationMenuTrigger>
+            )}
+
             {navItem.subMenu ? (
               <NavigationMenuContent>
                 <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>

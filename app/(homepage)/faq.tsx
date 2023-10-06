@@ -49,7 +49,11 @@ const Faq = () => {
   return (
     <section className='flex flex-col items-center justify-center gap-16 '>
       <h1 className=''> Frequently Asked Questions</h1>
-      <Accordion type='single' collapsible className='lg:w-[60%]'>
+      <Accordion
+        type='single'
+        collapsible
+        className='lg:w-[60%] flex flex-col items-between justify-start '
+      >
         {faqData.map((faq) => (
           <AccordionItem
             value={faq.value}

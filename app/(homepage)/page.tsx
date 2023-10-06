@@ -1,7 +1,7 @@
+import ThemeToggle from "../../components/theme-toggle";
 import Blog from "./Blog";
 import SurchargeBanner from "./Surcharge-program-banner";
 import Faq from "./faq";
-import Footer from "./footer";
 import HeroSection from "./hero-section";
 import HomeGoodies from "./home-goodies";
 import NadaPayment from "./home-nadapayment";
@@ -23,7 +23,6 @@ export default function Home() {
       <NadaPayment />
       <InlineSignup />
       <Blog />
-      <Footer />
     </main>
   );
 }

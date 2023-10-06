@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 
@@ -78,8 +79,8 @@ const footerData = [
 
 const Footer = () => {
   return (
-    <footer>
-      <h3 className='mb-12 cursor-pointer select-none basis-1/5'>
+    <footer className='mx-5 mb-10 md:mx-8 lg:mx-10'>
+      <h3 className='mb-12 cursor-pointer select-none basis-1/5 mt-52'>
         <span className='text-primary '>Naga</span>Payments
       </h3>
       <div className='grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6'>
@@ -90,7 +91,9 @@ const Footer = () => {
             </h3>
             {data.subTopic.map((subData) => (
               <div key={subData.id}>
-                <p className='text-sm '>{subData.title}</p>
+                <Link href='' className='mb-6 text-sm'>
+                  {subData.title}
+                </Link>
               </div>
             ))}
           </div>
