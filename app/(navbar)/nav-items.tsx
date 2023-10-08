@@ -28,27 +28,27 @@ const navItems: NavItem[] = [
     subMenu: [
       {
         name: "Terminal",
-        href: "/terminal",
+        href: "products/terminal",
       },
       {
         name: "Virtual terminal",
-        href: "/vitual-terminal",
+        href: "products/vitual-terminal",
       },
       {
         name: "Payment page",
-        href: "/payment",
+        href: "products/payment",
       },
       {
         name: "Invoicing",
-        href: "/invoice",
+        href: "products/invoice",
       },
       {
         name: "Payment Links",
-        href: "/payment-links",
+        href: "products/payment-links",
       },
       {
         name: "Recurring Payment ",
-        href: "/recurring-payment",
+        href: "products/recurring-payment",
       },
     ],
   },
@@ -67,16 +67,6 @@ const navItems: NavItem[] = [
   {
     name: "Integrations",
     href: "/integrations",
-    subMenu: [
-      {
-        name: "Dental",
-        href: "/integrations/dental",
-      },
-      {
-        name: "QuickBooks",
-        href: "/integrations/quickbooks",
-      },
-    ],
   },
   {
     name: "Case Studies",

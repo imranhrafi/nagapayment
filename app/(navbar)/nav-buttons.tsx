@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const NavButtons = () => {
   return (
-    <div className='flex justify-end items-center gap-4'>
-      <Button variant={"ghost"}>Sign In</Button>
-      <Button variant={"default"}>Sign Up</Button>
+    <div className='flex items-center justify-end gap-4'>
+      <Link href={"/sign-in"}>
+        <Button variant={"ghost"}>Sign In</Button>
+      </Link>
+
+      <Link href={"/get-started"}>
+        <Button variant={"default"}>Get Started</Button>
+      </Link>
     </div>
   );
 };

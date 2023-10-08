@@ -10,6 +10,28 @@ const HowItWork = () => {
     <section className='flex flex-col items-center'>
       <h1>How it works</h1>
       <Image src={posImage} alt='pos machine' />
+      <TransparentPricing />
+      <Card className='grid grid-cols-1 gap-10 p-10 mt-10 text-left text-center md: md:gap-4 md:grid-cols-2'>
+        <div className='flex flex-col gap-4'>
+          <p>Terminal Rental Cost</p>
+          <h3>$35/month</h3>
+          <p className='px-4 py-3 text-xs font-bold text-blue-900 uppercase bg-blue-200 rounded-full md:text-base'>
+            ✧ Free access to Nadapayment Virtual Terminal ✧
+          </p>
+        </div>
+        <Button className='items-end mx-auto mt-auto md:mx-0 md:ml-auto w-max h-max'>
+          Get Started
+        </Button>
+      </Card>
+    </section>
+  );
+};
+
+export default HowItWork;
+
+export const TransparentPricing = () => {
+  return (
+    <div>
       <div className='flex flex-col'>
         <header>
           <h2>Fair, Transparent Pricing</h2>
@@ -63,22 +85,7 @@ const HowItWork = () => {
             </div>
           </Card>
         </div>
-
-        <Card className='grid grid-cols-1 gap-10 p-10 mt-10 text-left text-center md: md:gap-4 md:grid-cols-2'>
-          <div className='flex flex-col gap-4'>
-            <p>Terminal Rental Cost</p>
-            <h3>$35/month</h3>
-            <p className='px-4 py-3 text-xs font-bold text-blue-900 uppercase bg-blue-200 rounded-full md:text-base'>
-              ✧ Free access to Nadapayment Virtual Terminal ✧
-            </p>
-          </div>
-          <Button className='items-end mx-auto mt-auto md:mx-0 md:ml-auto w-max h-max'>
-            Get Started
-          </Button>
-        </Card>
       </div>
-    </section>
+    </div>
   );
 };
-
-export default HowItWork;
